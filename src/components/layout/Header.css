@@ -1,0 +1,257 @@
+/* ============================ Header (website) ============================ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Thanh thông báo ---------- */
+.announce {
+  background: linear-gradient(90deg, var(--green-dark), var(--green));
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+}
+.announce-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  height: 38px;
+  overflow: hidden;
+}
+.announce-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+/* ---------- Hàng chính ---------- */
+.header-main {
+  border-bottom: 1px solid var(--border);
+}
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: var(--header-h);
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: var(--text);
+  transition: background var(--transition), color var(--transition);
+  position: relative;
+}
+.icon-btn:hover {
+  background: var(--green-light);
+  color: var(--green-dark);
+}
+
+/* Logo */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.logo-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--green), var(--green-dark));
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(74, 155, 46, 0.32);
+}
+.logo-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--green-dark);
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+.logo-text span {
+  color: var(--orange);
+}
+
+/* Tìm kiếm */
+.search {
+  flex: 1;
+  max-width: 540px;
+  display: flex;
+  align-items: center;
+  background: var(--bg-soft);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.search:focus-within {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(74, 155, 46, 0.12);
+  background: #fff;
+}
+.search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  padding: 12px 18px;
+  outline: none;
+  color: var(--text);
+}
+.search button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  align-self: stretch;
+  color: #fff;
+  background: var(--green);
+  transition: background var(--transition);
+}
+.search button:hover { background: var(--green-dark); }
+
+/* Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.header-hotline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 8px;
+}
+.hotline-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.hotline-text small { font-size: 11px; color: var(--text-light); }
+.hotline-text b { font-size: 15px; color: var(--green-dark); font-family: var(--font-display); }
+
+.cart-btn .cart-count {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+}
+
+/* ---------- Thanh điều hướng ---------- */
+.nav-bar {
+  background: var(--white);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-list > li { position: relative; }
+.nav-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--text);
+  border-radius: var(--radius-pill);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.nav-list a:hover { color: var(--green-dark); background: var(--green-light); }
+.nav-list a.active { color: var(--green-dark); background: var(--green-light); }
+.nav-list a.hot { color: var(--red); }
+.nav-promo {
+  font-size: 13px;
+  color: var(--text-light);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Dropdown danh mục */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 330px;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all var(--transition);
+  z-index: 50;
+}
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dropdown-item {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px !important;
+  border-radius: var(--radius-sm) !important;
+}
+.dropdown-item:hover { background: var(--green-soft) !important; }
+.dropdown-emoji {
+  font-size: 26px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-soft);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+.dropdown-item span:last-child { display: flex; flex-direction: column; }
+.dropdown-item b { font-size: 14.5px; color: var(--text); }
+.dropdown-item small { font-size: 12px; color: var(--text-light); font-weight: 400; }
+
+/* ---------- Co giãn layout cho màn hình hẹp (vẫn là website) ---------- */
+@media (max-width: 1080px) {
+  .header-hotline .hotline-text { display: none; }
+  .nav-promo { display: none; }
+}
+@media (max-width: 920px) {
+  .header-row { gap: 14px; }
+  /* Cho thanh menu cuộn ngang nếu không đủ chỗ */
+  .nav-inner { overflow-x: auto; }
+  .nav-list { flex-wrap: nowrap; }
+}

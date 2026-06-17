@@ -1,0 +1,96 @@
+/* ---------- Ảnh sản phẩm + placeholder ---------- */
+.prod-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.prod-img-ph {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.prod-img-blob {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0.9;
+}
+.prod-img-emoji {
+  position: relative;
+  font-size: clamp(46px, 9vw, 92px);
+  line-height: 1;
+  filter: drop-shadow(0 6px 10px rgba(40, 54, 24, 0.18));
+  transition: transform 0.35s ease;
+}
+
+/* ---------- Đánh giá sao ---------- */
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--text-light);
+}
+.rating-stars {
+  display: inline-flex;
+  gap: 1px;
+}
+.rating-stars .star {
+  color: #d9ddd0;
+}
+.rating-stars .star.on {
+  color: var(--star);
+}
+.rating-val {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ---------- Ô số lượng ---------- */
+.qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid var(--border-dark);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  background: var(--white);
+}
+.qty button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 42px;
+  color: var(--green-dark);
+  transition: background var(--transition);
+}
+.qty button:hover:not(:disabled) {
+  background: var(--green-light);
+}
+.qty button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.qty input {
+  width: 44px;
+  height: 42px;
+  text-align: center;
+  border: none;
+  border-left: 1.5px solid var(--border);
+  border-right: 1.5px solid var(--border);
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--text);
+  -moz-appearance: textfield;
+}
+.qty input::-webkit-outer-spin-button,
+.qty input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
