@@ -478,9 +478,10 @@ export const products = [
 ]
 
 // Gán ảnh local cho tất cả sản phẩm: public/images/<slug>.png
+// Dùng BASE_URL để đường dẫn đúng cả khi chạy dev ('/') lẫn trên GitHub Pages ('/mietvuon-web/').
 // (Muốn dùng ảnh từ CDN/Drive thay vì ảnh local thì sửa dòng dưới đây.)
 products.forEach((p) => {
-  p.image = `/images/${p.slug}.png`
+  p.image = `${import.meta.env.BASE_URL}images/${p.slug}.png`
 })
 
 /* ------------------ Hàm hỗ trợ truy vấn ------------------ */
