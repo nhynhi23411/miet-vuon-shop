@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react'
 // Khi chạy dev (localhost) vẫn dùng '/'.
 export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: command === 'build' ? '/mietvuon-web/' : '/',
+  base: command === 'build' ? '/miet-vuon-shop/' : '/',
   server: {
     port: 5173,
     open: true,
